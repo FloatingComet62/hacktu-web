@@ -7,8 +7,4 @@
     node --version
     git --version # Use packages
   '';
-  tasks = {
-    "proj:setup".exec = "npm ci";
-    "devenv:enterShell".after = [ "proj:setup" ];
-  };
 }
