@@ -4,6 +4,7 @@ export const HACKATHON_DATE_FMT = "February 7th & 8th";
 export const HACKATHON_DATE = "2026-02-07";
 export const HACKATHON_END_DATE = "2026-02-08";
 export const REGISTERATION_DEADLINE = "2026-01-19"; // 18 EOD
+export const REGISTERATION_DEADLINE_FMT = "January 18 2026"
 export const NAVBAR = [
   n("Register", "https://example.com"),
   n("Sponsors", "https://example.com"),
@@ -32,6 +33,20 @@ export const TIMELINE = [
   start_date: Date;
   end_date: Date;
 }[];
+export const FAQ = [
+  f("What is a Hackathon?", "A hackathon is an event, usually hosted by a tech company or organization, where programmers get together for a short period of time to collaborate on a project (usually a website or an app)."),
+  f("Who all are eligible to participate?", "Any student pursuing a college degree can participate."),
+  f("It is my first hackathon, what's something I should know?", "Hackathons aren't just about winning (though that's always exciting!); they're incredible opportunities to network and connect with like-minded people (many of our community core members first met at hackathons). Whether you win or lose, you're guaranteed to learn something valuable. Approach it with a mindset of growth and discovery, and we promise you'll have a great time!"),
+  f("What is the Round 0 / Checkpoint 0?", "Round 0 is the preliminary round for this hackathon, where participants are required to submit a PowerPoint presentation (PPT) outlining their idea or solution. The evaluation of these submissions will determine eligibility for offline participation in the hackathon."),
+  f("Where and how do I submit my PPT for Round 0?", `You can submit your PPT for Round 0 by visiting https://submit.ccstiet.com/. Follow the instructions on the portal to upload your submission before the deadline, i.e. ${REGISTERATION_DEADLINE_FMT}, 11:59 p.m. Ensure your file meets the required guidelines for successful submission.`),
+  f("Where is it being held?", "HackTU 7.0 is a Physical Hackathon. You will have to attend the hackathon in offline mode at Thapar Institute of Engineering and Technology, Patiala, Punjab. Necessary information will be provided to participants through their registered mail."),
+  f("Can we participate individually", "No, we firmly believe in the power of collaborative learning and encourage participants to form teams (2-5). Join forces, amplify your skills, and embark on a collective journey of innovation at our upcoming event!"),
+  f("Will there be food arrangements", "We've got you covered with delicious meals and refreshing treats to keep your energy high throughout the event. Your sustenance is as important to us as your creativity! Rest assured, your well-being is our priority."),
+  f("I've already applied but my application status is still pending", "Be patient, we've got so many registrations, we are still in the process of accepting teams, just hold on for some time."),
+  f("Can I use a project that was previously bult for a hackathon", "No, you cannot use a project that was previously built. All hackathon projects must be created from scratch during the event's timeline to ensure fairness and creativity. Additionally, all participants must comply with the MLH Code of Conduct to maintain a positive and inclusive environment."),
+  f("What if I feel sleepy during the Hackathon?", "We will try our best to have engaging activities at every hour but just incase you lose it all, we'll have you covered with special resting zones. Otherwise feel free to have a quick nap at your desk"),
+  f("Curious about something else", "Contact us at: +91 7388878724 +91 7821800212 support@ccstiet.com")
+] as { question: string, answer: string }[]
 export const FOOTER_LINKS = {
   about: "https://example.com",
   privacy: "https://example.com",
@@ -47,6 +62,9 @@ export const SOCIALS = {
 }
 
 
+function f(question: string, answer: string) {
+  return { question, answer };
+}
 function t(name: string, description: string, sdg: string) {
   return { name, description, sdg };
 }

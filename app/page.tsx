@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Countdown from "@/components/Countdown";
-import { FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, TIMELINE } from "./config";
+import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, TIMELINE } from "./config";
 import ApplyWithDevfolio from "@/components/ApplyWithDevfolio";
 import { useCountdown } from "./utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 function Hero() {
   const { isPassed, ...countdown } = useCountdown(REGISTERATION_DEADLINE);
@@ -191,18 +192,14 @@ function FAQs() {
     <div className="flex flex-col items-center">
       <div className="text-8xl font-[Nippo-Variable] mb-16">FAQs</div>
       <div className="flex w-[100vw] justify-evenly text-center">
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">100+</div>
-          <div className="text-4xl">Projects</div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">500+</div>
-          <div className="text-4xl">Hackers</div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">5 Lakhs+</div>
-          <div className="text-4xl">Prizes</div>
-        </div>
+        <Accordion type="single" collapsible className="w-full max-w-xl">
+          {FAQ.map(({ question, answer }, i) => (
+            <AccordionItem value={`faq-${i}`}>
+              <AccordionTrigger>{question}</AccordionTrigger>
+              <AccordionContent>{answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
   )
