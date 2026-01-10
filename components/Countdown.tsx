@@ -8,6 +8,7 @@ import {
 } from './ui/input-otp'
 import { Rows2 as Seperator } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { cn } from '@/lib/utils';
 
 function getRemainingTime(endDateStr: string) {
   const today = new Date();
@@ -42,10 +43,10 @@ function getRemainingTime(endDateStr: string) {
   return { days, hours, minutes, seconds, milliseconds };
 }
 
-function Box({ label, value }: { label: string, value: string }) {
-  return <Card className="p-4 flex flex-col text-center">
+function Box({ label, value, className }: { label: string, value: string, className?: string }) {
+  return <Card className={cn("p-4 flex flex-col text-center", className)}>
     <CardTitle>{label}</CardTitle>
-    <CardContent className="text-4xl">
+    <CardContent className="text-4xl font-[Nippo-Variable]">
       {value}
     </CardContent>
   </Card>
@@ -62,7 +63,7 @@ function leftPad(
   return output;
 }
 
-export default function Countdown() {
+export default function Countdown({ endTime }: { endTime: string }) {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -70,7 +71,7 @@ export default function Countdown() {
   const [milliseconds, setMilliseconds] = useState(0);
   useEffect(() => {
     setInterval(() => {
-      const time = getRemainingTime("2026-01-18");
+      const time = getRemainingTime(endTime);
       setDays(time.days);
       setHours(time.hours);
       setMinutes(time.minutes);
@@ -85,7 +86,7 @@ export default function Countdown() {
       <Box label="Hours" value={hours.toString()} />
       <Box label="Minutes" value={minutes.toString()} />
       <Box label="Seconds" value={leftPad(seconds.toString(), 2, "0")} />
-      <Box label="Milliseconds" value={leftPad(milliseconds.toString(), 3, "0")} />
+      <Box className="min-w-[8vw]" label="Milliseconds" value={leftPad(milliseconds.toString(), 3, "0")} />
     </div>
   )
 }

@@ -31,10 +31,45 @@
     font-display: swap;
     font-style: normal;
 }
+/**
+* @license
+*
+* Font Family: Nippo
+* Designed by: Manushi Parikh
+* URL: https://www.fontshare.com/fonts/nippo
+* © 2026 Indian Type Foundry
+*
+* Nippo Extralight 
+* Nippo Light 
+* Nippo Regular 
+* Nippo Medium 
+* Nippo Bold 
+* Nippo Variable (Variable font)
+
+*
+*/
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'Nippo-Variable';
+  src: url('./fonts/Nippo-Variable.woff2') format('woff2'),
+       url('./fonts/Nippo-Variable.woff') format('woff'),
+       url('./fonts/Nippo-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
+    --offwhite: #f2f0ef
     --secondary-background: oklch(100% 0 0);
     --main-foreground: oklch(0% 0 0);
     --main: oklch(67.47% 0.1726 259.49);
