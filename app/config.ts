@@ -1,6 +1,7 @@
 export const HACKATHON_VERSION = 7;
 export const SUBMISSION_PORTAL_LINK = "https://submit.ccstiet.com";
 export const HACKATHON_DATE_FMT = "February 7th & 8th";
+export const HACKATHON_DATE_NO_TIME = "2026-02-07";
 export const HACKATHON_DATE = "2026-02-07T5:30:00Z";
 export const HACKATHON_END_DATE = "2026-02-08";
 export const REGISTERATION_DEADLINE_INCLUSIVE_DAY = "2026-01-18";
@@ -23,14 +24,14 @@ export const TRACKS = [
 export const TIMELINE = [
   q("Track Release", "Get ready to innovate! We've revealed the hackathon tracks, each designed to spark creativity and tackle real-world challenges. Gear up to choose your path and make a difference!", "2026-01-01"),
   q("Idea Submission", "Submit you innovative ideas, as we have limited seats! We're reviewing submissions as they come in, and you'll be notified about your selection status through mail. Don't miss your chance to join HackTU!", "2026-01-02", REGISTERATION_DEADLINE_INCLUSIVE_DAY),
-  q("Hackathon", "The hackathon begins at 11:00 A.M. Teams must be present at the venue to participate in the hackathon. We look forward to welcoming you at Thapar Institute of Engineering and Technology, Patiala", HACKATHON_DATE, HACKATHON_END_DATE),
+  q("Hackathon", "The hackathon begins at 11:00 A.M. Teams must be present at the venue to participate in the hackathon. We look forward to welcoming you at Thapar Institute of Engineering and Technology, Patiala", HACKATHON_DATE_NO_TIME, HACKATHON_END_DATE),
 ] as TimelineItem[];
 export const FAQ = [
   f("What is a Hackathon?", "A hackathon is an event, usually hosted by a tech company or organization, where programmers get together for a short period of time to collaborate on a project (usually a website or an app)."),
   f("Who all are eligible to participate?", "Any student pursuing a college degree can participate."),
   f("It is my first hackathon, what's something I should know?", "Hackathons aren't just about winning (though that's always exciting!); they're incredible opportunities to network and connect with like-minded people (many of our community core members first met at hackathons). Whether you win or lose, you're guaranteed to learn something valuable. Approach it with a mindset of growth and discovery, and we promise you'll have a great time!"),
   f("What is the Round 0 / Checkpoint 0?", "Round 0 is the preliminary round for this hackathon, where participants are required to submit a PowerPoint presentation (PPT) outlining their idea or solution. The evaluation of these submissions will determine eligibility for offline participation in the hackathon."),
-  f("Where and how do I submit my PPT for Round 0?", `You can submit your PPT for Round 0 by visiting https://submit.ccstiet.com/. Follow the instructions on the portal to upload your submission before the deadline, i.e. ${REGISTERATION_DEADLINE_FMT}, 11:59 p.m. Ensure your file meets the required guidelines for successful submission.`),
+  f("Where and how do I submit my PPT for Round 0?", `You can submit your PPT for Round 0 by visiting ${SUBMISSION_PORTAL_LINK}. Follow the instructions on the portal to upload your submission before the deadline, i.e. ${REGISTERATION_DEADLINE_FMT}, 11:59 p.m. Ensure your file meets the required guidelines for successful submission.`),
   f("Where is it being held?", `HackTU ${HACKATHON_VERSION}.0 is a Physical Hackathon. You will have to attend the hackathon in offline mode at Thapar Institute of Engineering and Technology, Patiala, Punjab. Necessary information will be provided to participants through their registered mail.`),
   f("Can we participate individually", "No, we firmly believe in the power of collaborative learning and encourage participants to form teams (2-5). Join forces, amplify your skills, and embark on a collective journey of innovation at our upcoming event!"),
   f("Will there be food arrangements", "We've got you covered with delicious meals and refreshing treats to keep your energy high throughout the event. Your sustenance is as important to us as your creativity! Rest assured, your well-being is our priority."),
