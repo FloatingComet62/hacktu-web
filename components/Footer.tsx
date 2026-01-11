@@ -11,7 +11,7 @@ export default function Footer() {
   const smallerFont = useWidthCutoff(737);
   return (
     <footer className={cn("bg-main rounded-t-[100%] flex items-center justify-center", smallerFont ? "text-[3vw] h-[30vh]" : "text-2xl h-[60vh]")}>
-      <div className={cn("flex flex-col gap-4 w-screen items-center", smallerFont ? "mt-[10vh]" : "mt-[30vh]")}>
+      <div className={cn("flex flex-col gap-4 w-screen items-center mb-[10vh]", smallerFont ? "mt-[10vh]" : "mt-[30vh]")}>
         <div className={cn("flex gap-4 font-[Nippo-Variable]", smallerFont ? "flex-col text-center" : "")}>
           <Link href={FOOTER_LINKS.about}>About CCS</Link>
           <Link href={FOOTER_LINKS.privacy}>Privacy Policy</Link>
