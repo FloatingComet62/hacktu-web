@@ -13,7 +13,7 @@ export default function Timeline() {
   const switchToSingleColumn = useWidthCutoff(700);
   const verySmall = useWidthCutoff(484);
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div id="timeline" className="flex flex-col items-center gap-4">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Timeline</div>
       <div className={cn("grid items-center gap-4", switchToSingleColumn ? "grid-cols-1" : "grid-cols-2")}>
       {TIMELINE.map((item, i) => (

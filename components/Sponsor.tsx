@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export default function Sponsor() {
   const verySmall = useWidthCutoff(484);
   return (
-    <div className="flex flex-col items-center">
+    <div id="sponsor" className="flex flex-col items-center">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Sponsor</div>
       <div className="flex flex-col w-[100vw] justify-evenly items-center text-center p-8">
       {SPONSORS.map(({ image_link, link, name }) => (

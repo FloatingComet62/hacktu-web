@@ -1,16 +1,16 @@
 export const HACKATHON_VERSION = 7;
-export const DEVFOLIO_LINK = "https://example.com";
+export const SUBMISSION_PORTAL_LINK = "https://submit.ccstiet.com";
 export const HACKATHON_DATE_FMT = "February 7th & 8th";
-export const HACKATHON_DATE = "2026-02-07";
+export const HACKATHON_DATE = "2026-02-07T5:30:00Z";
 export const HACKATHON_END_DATE = "2026-02-08";
 export const REGISTERATION_DEADLINE_INCLUSIVE_DAY = "2026-01-18";
-export const REGISTERATION_DEADLINE = "2026-01-19"; // 18 EOD
+export const REGISTERATION_DEADLINE = "2026-01-18T18:30:00Z"; // 18 EOD
 export const REGISTERATION_DEADLINE_FMT = "January 18 2026"
 export const NAVBAR = [
-  n("Register", "https://example.com"),
-  n("Sponsors", "https://example.com"),
-  n("FAQs", "https://example.com"),
-  n("Contact", "https://example.com"),
+  n("Register", "htps://example.com"),
+  n("Sponsors", "#sponsor"),
+  n("FAQs", "#faq"),
+  n("Contact", "#footer"),
 ]
 export const TRACKS = [
   t("Open Innovation", "This track is for creative solutions that don't fit the other categories. Whether it's a new developer tool, a fintech app, or something completely different, this is your chance to shine. Solve a real-world problem and show us that innovation has no boundaries.", "Open Track"),
@@ -40,22 +40,22 @@ export const FAQ = [
   f("Curious about something else", "Contact us at: +91 7388878724 +91 7821800212 support@ccstiet.com")
 ] as { question: string, answer: string }[]
 export const FOOTER_LINKS = {
-  about: "https://example.com",
-  privacy: "https://example.com",
-  codeofcontact: "https://example.com",
-  termsandconditions: "https://example.com",
+  about: "https://www.ccstiet.com/",
+  privacy: "https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md",
+  codeofcontact: "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md",
+  termsandconditions: "https://github.com/MLH/mlh-policies/blob/main/contest-terms.md",
 } as const;
 export const SOCIALS = {
-  mail: "https://example.com",
-  instagram: "https://example.com",
-  linkedin: "https://example.com",
-  whatsapp: "https://example.com",
-  discord: "https://example.com",
+  mail: "mailto:ccstiet@thapar.edu",
+  instagram: "https://www.instagram.com/ccs_tiet/",
+  linkedin: "https://www.linkedin.com/company/ccs-tiet/posts/_feedView=all",
+  whatsapp: "https://chat.whatsapp.com/D4SQJXJDdPr7KD2tcPUAZx",
+  discord: "https://discord.gg/QXQrZ56BcW",
 } as const;
 export const SPONSORS = [
-  s("/sponsors/devfolio.svg", "https://example.com", "Devfolio"),
-  s("/sponsors/ETHIndia.svg", "https://example.com", "ETHIndia"),
-  s("/sponsors/github.png", "https://example.com", "Github"),
+  s("/sponsors/devfolio.svg", "https://devfolio.co/", "Devfolio"),
+  s("/sponsors/ETHIndia.svg", "https://ethindia-villa.devfolio.co/overview", "ETHIndia"),
+  s("/sponsors/github.png", "https://github.com", "Github"),
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
 

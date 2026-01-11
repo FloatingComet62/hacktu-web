@@ -8,7 +8,7 @@ export default function LastYear() {
   const verySmall = useWidthCutoff(484);
 
   return (
-    <div className="flex flex-col items-center">
+    <div id="lastyear" className="flex flex-col items-center">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Last Year{switchToColumn || "..."}</div>
       <div className={cn("flex w-[100vw] justify-evenly text-center", switchToColumn && "flex-col gap-16")}>
         <div className="flex flex-col gap-2">
