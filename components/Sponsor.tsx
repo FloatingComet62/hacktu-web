@@ -7,7 +7,7 @@ export default function Sponsor() {
   return (
     <div className="flex flex-col items-center">
       <div className="text-8xl font-[Nippo-Variable] mb-16">Sponsor</div>
-      <div className="flex flex-col w-[100vw] justify-evenly items-center text-center">
+      <div className="flex flex-col w-[100vw] justify-evenly items-center text-center p-8">
       {SPONSORS.map(({ image_link, link, name }) => (
         <Link key={`sponsor-${name}`} href={link}>
           <Image src={image_link} width={1200} height={800} alt={name} />

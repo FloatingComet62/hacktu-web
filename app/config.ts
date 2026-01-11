@@ -57,7 +57,7 @@ export const SPONSORS = [
   s("/sponsors/ETHIndia.svg", "https://example.com", "ETHIndia"),
   s("/sponsors/github.png", "https://example.com", "Github"),
 ] as { image_link: string; link: string; name: string }[];
-export const SPONSOR_PACKET = "https://example.com";
+export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
 
 export type Track = {
   name: string;

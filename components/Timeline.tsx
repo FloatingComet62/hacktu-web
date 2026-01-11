@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { TimelineItem, TIMELINE } from "@/app/config"
 import { Calendar } from "@/components/ui/calendar";
@@ -32,6 +34,7 @@ export default function Timeline() {
       </div>
       <div className="flex w-[100vw] justify-evenly text-center">
         <Calendar
+          className="bg-offwhite p-8 rounded-xl"
           mode="range"
           hideNavigation
           defaultMonth={TIMELINE[currentIndex].start_date}
