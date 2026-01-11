@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { TimelineItem, TIMELINE } from "@/app/config"
 import { Calendar } from "@/components/ui/calendar";
-import { Button } from "react-day-picker";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
+const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Timeline() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const grouped = [] as { item: TimelineItem, index: number }[][];
@@ -18,7 +20,7 @@ export default function Timeline() {
       {grouped.map((timeline_items, i) => (
         <div key={`timeline-group-${i}`} className="flex gap-4">
         {timeline_items.map(({ item, index }) => (
-          <Button key={`timeline-item-${index}`} variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(index)}>
+          <Button key={`timeline-item-${index}`} className={cn("bg-main h-auto", SHADOWCOLOR[index % SHADOWCOLOR.length] + "shadow")} onClick={() => setCurrentIndex(index)}>
             <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
               <div className="text-4xl font-[Nippo-Variable]">{item.title}</div>
               <div className="text-xl">{item.description}</div>

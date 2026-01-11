@@ -23,11 +23,11 @@ export default function Countdown({ days, hours, minutes, seconds, milliseconds 
 }) {
   return (
     <div className="flex gap-2">
-      <Box label="Days" value={days.toString()} />
-      <Box label="Hours" value={hours.toString()} />
-      <Box label="Minutes" value={minutes.toString()} />
-      <Box label="Seconds" value={leftPad(seconds.toString(), 2, "0")} />
-      <Box className="min-w-[8vw]" label="Milliseconds" value={leftPad(milliseconds.toString(), 3, "0")} />
+      <Box label="Days" className="redshadow" value={days.toString()} />
+      <Box label="Hours" className="yellowshadow" value={hours.toString()} />
+      <Box label="Minutes" className="greenshadow" value={minutes.toString()} />
+      <Box label="Seconds" className="blueshadow" value={leftPad(seconds.toString(), 2, "0")} />
+      <Box label="Milliseconds" className="min-w-[10vw] purpleshadow" value={leftPad(milliseconds.toString(), 3, "0")} />
     </div>
   )
 }
