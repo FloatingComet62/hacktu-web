@@ -19,21 +19,12 @@ export const TRACKS = [
   t("Life Below Water", "Use technology to protect our oceans and reverse marine damage. Focus on solving issues like plastic pollution, sustainable fishing, or real-time water quality monitoring. Build solutions that keep marine ecosystems healthy and vibrant.", "SDG 14"),
   t("Sustainable Ecosystems", "Design systems that help industries and cities grow without hurting nature. Build solutions to optimize resource usage, monitor wildlife health, or create eco-friendly infrastructure. The goal is to support modern living while actively protecting the land around us.", "SDG 9, 11 & 15"),
   t("Collaborative, Consumption & Production", "Create platforms that connect producers and consumers to reduce waste. We need tools to track product lifecycles, share materials between industries, or encourage responsible buying. Use technology to make 'reduce, reuse, recycle' a reality through better collaboration.", "SDG 9, 11 & 15"),
-] as {
-  name: string;
-  description: string;
-  sdg: string;
-}[];
+] as Track[];
 export const TIMELINE = [
   q("Track Release", "Get ready to innovate! We've revealed the hackathon tracks, each designed to spark creativity and tackle real-world challenges. Gear up to choose your path and make a difference!", "2026-01-01"),
   q("Idea Submission", "Submit you innovative ideas, as we have limited seats! We're reviewing submissions as they come in, and you'll be notified about your selection status through mail. Don't miss your chance to join HackTU!", "2026-01-02", REGISTERATION_DEADLINE_INCLUSIVE_DAY),
   q("Hackathon", "The hackathon begins at 11:00 A.M. Teams must be present at the venue to participate in the hackathon. We look forward to welcoming you at Thapar Institute of Engineering and Technology, Patiala", HACKATHON_DATE, HACKATHON_END_DATE),
-] as {
-  title: string;
-  description: string;
-  start_date: Date;
-  end_date: Date;
-}[];
+] as TimelineItem[];
 export const FAQ = [
   f("What is a Hackathon?", "A hackathon is an event, usually hosted by a tech company or organization, where programmers get together for a short period of time to collaborate on a project (usually a website or an app)."),
   f("Who all are eligible to participate?", "Any student pursuing a college degree can participate."),
@@ -68,6 +59,17 @@ export const SPONSORS = [
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://example.com";
 
+export type Track = {
+  name: string;
+  description: string;
+  sdg: string;
+};
+export type TimelineItem = {
+  title: string;
+  description: string;
+  start_date: Date;
+  end_date: Date;
+};
 
 function s(image_link: string, link: string, name: string) {
   return { image_link, link, name };

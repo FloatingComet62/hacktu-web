@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Countdown from "@/components/Countdown";
-import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, SPONSOR_PACKET, SPONSORS, TIMELINE } from "./config";
+import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, SPONSOR_PACKET, SPONSORS, TIMELINE, TimelineItem, Track, TRACKS } from "./config";
 import ApplyWithDevfolio from "@/components/ApplyWithDevfolio";
 import { useCountdown } from "./utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Card, CardTitle } from "@/components/ui/card";
 
 function Hero() {
   const { isPassed, ...countdown } = useCountdown(REGISTERATION_DEADLINE);
@@ -101,22 +102,29 @@ function LastYear() {
 }
 
 function Tracks() {
+  const grouped = [] as Track[][];
+  for (let i = 0; i < TRACKS.length; i++) {
+    if (i % 2 == 0) grouped.push([]);
+    console.assert(grouped.length > 0);
+    grouped[grouped.length - 1].push(TRACKS[i]);
+  }
   return (
     <div className="flex flex-col items-center">
       <div className="text-8xl font-[Nippo-Variable] mb-16">Tracks</div>
-      <div className="flex w-[100vw] justify-evenly text-center">
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">100+</div>
-          <div className="text-4xl">Projects</div>
+      <div className="flex flex-col gap-4 w-[80vw] justify-evenly text-center">
+      {grouped.map((tracks, i) => (
+        <div key={`track-group-${i}`} className="flex gap-4">
+          {tracks.map((track, j) => (
+            <Card key={`track-${i * 69 + j}`} className="p-4 flex flex-col h-auto justify-evenly">
+              <CardTitle>
+                <div className="font-[Nippo-Variable] text-6xl">{track.name}</div>
+                <div className="text-xl">{track.sdg}</div>
+              </CardTitle>
+              <div className="text-2xl">{track.description}</div>
+            </Card>
+          ))}
         </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">500+</div>
-          <div className="text-4xl">Hackers</div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">5 Lakhs+</div>
-          <div className="text-4xl">Prizes</div>
-        </div>
+      ))}
       </div>
     </div>
   )
@@ -124,32 +132,28 @@ function Tracks() {
 
 function Timeline() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const grouped = [] as TimelineItem[][];
+  for (let i = 0; i < TIMELINE.length; i++) {
+    if (i % 2 == 0) grouped.push([]);
+    console.assert(grouped.length > 0);
+    grouped[grouped.length - 1].push(TIMELINE[i]);
+  }
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="text-8xl font-[Nippo-Variable] mb-16">Timeline</div>
       <div className="flex flex-col items-center gap-4">
-        <div className="flex gap-4">
-          <Button variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(0)}>
+      {grouped.map((timeline_items, i) => (
+        <div key={`timeline-group-${i}`} className="flex gap-4">
+        {timeline_items.map((item, j) => (
+          <Button key={`timeline-item-${i * 69 + j}`} variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(0)}>
             <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
-              <div className="text-4xl font-[Nippo-Variable]">{TIMELINE[0].title}</div>
-              <div className="text-xl">{TIMELINE[0].description}</div>
+              <div className="text-4xl font-[Nippo-Variable]">{item.title}</div>
+              <div className="text-xl">{item.description}</div>
             </div>
           </Button>
-          <Button variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(1)}>
-            <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
-              <div className="text-4xl font-[Nippo-Variable]">{TIMELINE[1].title}</div>
-              <div className="text-xl">{TIMELINE[1].description}</div>
-            </div>
-          </Button>
+        ))}
         </div>
-        <div className="flex gap-4">
-          <Button variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(2)}>
-            <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
-              <div className="text-4xl font-[Nippo-Variable]">{TIMELINE[2].title}</div>
-              <div className="text-xl">{TIMELINE[2].description}</div>
-            </div>
-          </Button>
-        </div>
+      ))}
       </div>
       <div className="flex w-[100vw] justify-evenly text-center">
         <Calendar
