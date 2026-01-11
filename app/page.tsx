@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Countdown from "@/components/Countdown";
-import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, SPONSORS, TIMELINE } from "./config";
+import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, SPONSOR_PACKET, SPONSORS, TIMELINE } from "./config";
 import ApplyWithDevfolio from "@/components/ApplyWithDevfolio";
 import { useCountdown } from "./utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -175,6 +175,14 @@ function Sponsor() {
           <Image src={image_link} width={1200} height={800} alt={name} />
         </Link>
       ))}
+      <div className="flex flex-col gap-4 font-[Nippo-Variable]">
+        <div className="text-6xl">Looking to Sponsor?</div>
+        <div className="text-4xl">See our sponsor packet below and reach out to us</div>
+        <Link href={SOCIALS.mail} className="text-4xl underline">here!</Link>
+        <Link href={SPONSOR_PACKET}>
+          <Button className="h-auto text-5xl p-4 cursor-pointer w-full">Sponsor Packet</Button>
+        </Link>
+      </div>
       </div>
     </div>
   )

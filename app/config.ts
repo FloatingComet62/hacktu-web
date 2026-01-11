@@ -66,6 +66,7 @@ export const SPONSORS = [
   s("/sponsors/ETHIndia.svg", "https://example.com", "ETHIndia"),
   s("/sponsors/github.png", "https://example.com", "Github"),
 ] as { image_link: string; link: string; name: string }[];
+export const SPONSOR_PACKET = "https://example.com";
 
 
 function s(image_link: string, link: string, name: string) {
