@@ -3,6 +3,7 @@ export const DEVFOLIO_LINK = "https://example.com";
 export const HACKATHON_DATE_FMT = "February 7th & 8th";
 export const HACKATHON_DATE = "2026-02-07";
 export const HACKATHON_END_DATE = "2026-02-08";
+export const REGISTERATION_DEADLINE_INCLUSIVE_DAY = "2026-01-18";
 export const REGISTERATION_DEADLINE = "2026-01-19"; // 18 EOD
 export const REGISTERATION_DEADLINE_FMT = "January 18 2026"
 export const NAVBAR = [
@@ -25,7 +26,7 @@ export const TRACKS = [
 }[];
 export const TIMELINE = [
   q("Track Release", "Get ready to innovate! We've revealed the hackathon tracks, each designed to spark creativity and tackle real-world challenges. Gear up to choose your path and make a difference!", "2026-01-01"),
-  q("Idea Submission", "Submit you innovative ideas, as we have limited seats! We're reviewing submissions as they come in, and you'll be notified about your selection status through mail. Don't miss your chance to join HackTU!", "2026-01-02", REGISTERATION_DEADLINE),
+  q("Idea Submission", "Submit you innovative ideas, as we have limited seats! We're reviewing submissions as they come in, and you'll be notified about your selection status through mail. Don't miss your chance to join HackTU!", "2026-01-02", REGISTERATION_DEADLINE_INCLUSIVE_DAY),
   q("Hackathon", "The hackathon begins at 11:00 A.M. Teams must be present at the venue to participate in the hackathon. We look forward to welcoming you at Thapar Institute of Engineering and Technology, Patiala", HACKATHON_DATE, HACKATHON_END_DATE),
 ] as {
   title: string;
@@ -59,9 +60,17 @@ export const SOCIALS = {
   linkedin: "https://example.com",
   whatsapp: "https://example.com",
   discord: "https://example.com",
+} as const;
+export const SPONSORS = [
+  s("/sponsors/devfolio.svg", "https://example.com", "Devfolio"),
+  s("/sponsors/ETHIndia.svg", "https://example.com", "ETHIndia"),
+  s("/sponsors/github.png", "https://example.com", "Github"),
+] as { image_link: string; link: string; name: string }[];
+
+
+function s(image_link: string, link: string, name: string) {
+  return { image_link, link, name };
 }
-
-
 function f(question: string, answer: string) {
   return { question, answer };
 }

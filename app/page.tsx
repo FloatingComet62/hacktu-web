@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Countdown from "@/components/Countdown";
-import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, TIMELINE } from "./config";
+import { FAQ, FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, SPONSORS, TIMELINE } from "./config";
 import ApplyWithDevfolio from "@/components/ApplyWithDevfolio";
 import { useCountdown } from "./utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -128,7 +128,7 @@ function Timeline() {
     <div className="flex flex-col items-center gap-4">
       <div className="text-8xl font-[Nippo-Variable] mb-16">Timeline</div>
       <div className="flex flex-col items-center gap-4">
-        <div className="flex">
+        <div className="flex gap-4">
           <Button variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(0)}>
             <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
               <div className="text-4xl font-[Nippo-Variable]">{TIMELINE[0].title}</div>
@@ -142,7 +142,7 @@ function Timeline() {
             </div>
           </Button>
         </div>
-        <div className="flex">
+        <div className="flex gap-4">
           <Button variant="reverse" className="bg-main h-auto" onClick={() => setCurrentIndex(2)}>
             <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
               <div className="text-4xl font-[Nippo-Variable]">{TIMELINE[2].title}</div>
@@ -169,19 +169,12 @@ function Sponsor() {
   return (
     <div className="flex flex-col items-center">
       <div className="text-8xl font-[Nippo-Variable] mb-16">Sponsor</div>
-      <div className="flex w-[100vw] justify-evenly text-center">
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">100+</div>
-          <div className="text-4xl">Projects</div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">500+</div>
-          <div className="text-4xl">Hackers</div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-[Nippo-Variable] text-6xl">5 Lakhs+</div>
-          <div className="text-4xl">Prizes</div>
-        </div>
+      <div className="flex flex-col w-[100vw] justify-evenly items-center text-center">
+      {SPONSORS.map(({ image_link, link, name }) => (
+        <Link key={`sponsor-${name}`} href={link}>
+          <Image src={image_link} width={1200} height={800} alt={name} />
+        </Link>
+      ))}
       </div>
     </div>
   )
@@ -192,11 +185,11 @@ function FAQs() {
     <div className="flex flex-col items-center">
       <div className="text-8xl font-[Nippo-Variable] mb-16">FAQs</div>
       <div className="flex w-[100vw] justify-evenly text-center">
-        <Accordion type="single" collapsible className="w-full max-w-xl">
+        <Accordion type="single" collapsible className="w-full max-w-3xl">
           {FAQ.map(({ question, answer }, i) => (
-            <AccordionItem value={`faq-${i}`}>
-              <AccordionTrigger>{question}</AccordionTrigger>
-              <AccordionContent>{answer}</AccordionContent>
+            <AccordionItem value={`faq-${i}`} key={`faq-${i}`}>
+              <AccordionTrigger className="text-2xl">{question}</AccordionTrigger>
+              <AccordionContent className="text-xl">{answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
@@ -223,7 +216,7 @@ function Footer() {
           <Link href={SOCIALS.discord}><Image src="/discord.svg" alt="Discord" width={25} height={25} /></Link>
         </div>
         <div className="flex font-[Nippo-Variable]">
-©HackTU 7.0 2026 ALL RIGHTS RESERVED | Designed With ❤️ by
+©HackTU {HACKATHON_VERSION}.0 {new Date(HACKATHON_DATE).getFullYear()} ALL RIGHTS RESERVED | Designed With ❤️ by
         </div>
       </div>
     </footer>
