@@ -17,10 +17,10 @@ export default function Tracks() {
         {TRACKS.map((track, i) => (
           <Card key={`track-${i}`} className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>
             <CardTitle>
-              <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-3xl" : "text-6xl")}>{track.name}</div>
-              <div className="text-xl">{track.sdg}</div>
+              <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-2xl" : "text-6xl")}>{track.name}</div>
+              <div className="text-lg">{track.sdg}</div>
             </CardTitle>
-            <div className="text-2xl">{track.description}</div>
+            <div className="text-md">{track.description}</div>
           </Card>
         ))}
       </div>

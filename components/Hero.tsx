@@ -23,7 +23,7 @@ export default function Hero() {
       <div className={cn("flex flex-col items-center gap-8", hideImage ? "w-screen justify-between mt-[25vh]" : "mr-[10vw]")}>
         <div className="flex flex-col text-center gap-4">
           <div>
-            <div className={cn("font-black font-[Nippo-Variable]", verySmall ? "text-8xl" : "text-9xl")}>HackTU {HACKATHON_VERSION}.0</div>
+            <div className={cn("font-black font-[Nippo-Variable]", verySmall ? "text-6xl" : "text-9xl")}>HackTU {HACKATHON_VERSION}.0</div>
             { showMLHOfficialTag && <div className="text-md font-normal font-[Nippo-Variable]">MLH Official Hackathon</div> }
           </div>
           <div className="text-2xl font-medium font-[Nippo-Variable]">{HACKATHON_DATE_FMT}</div>

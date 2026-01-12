@@ -26,8 +26,8 @@ export default function Timeline() {
           })
         }}>
           <div className={cn("flex flex-col whitespace-normal gap-4 p-4", verySmall ? "w-[80vw]" : "w-[40vw]")}>
-            <div className={cn("font-[Nippo-Variable]", switchToSingleColumn ? "text-2xl" : "text-4xl")}>{item.title}</div>
-            <div className="text-xl">{item.description}</div>
+            <div className={cn("font-[Nippo-Variable]", switchToSingleColumn ? "text-xl" : "text-4xl")}>{item.title}</div>
+            <div className="text-md">{item.description}</div>
           </div>
         </Button>
       ))}

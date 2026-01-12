@@ -1,22 +1,24 @@
 "use client";
 
-import { useEffect } from "react";
+import Script from "next/script";
 import { Button } from "./ui/button";
 import { SUBMISSION_PORTAL_LINK } from "@/app/config";
+import { useEffect, useState } from "react";
 
 export default function ApplyWithDevfolio() {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-      const script = document.createElement('script');
-      script.src = 'https://apply.devfolio.co/v2/sdk.js';
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
-      return () => {
-        document.body.removeChild(script);
-      }
+    setMounted(true);
   }, []);
+
+  if (!mounted) return null;
   return (
     <div className="flex flex-col items-center">
+      <Script
+        src="https://apply.devfolio.co/v2/sdk.js"
+        strategy="afterInteractive"
+      />
       <div 
         className="apply-button"
         data-hackathon-slug="hacktu7" 

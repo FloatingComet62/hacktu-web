@@ -12,7 +12,7 @@ export default function AboutUs() {
     <div id="aboutus" className="flex flex-col items-center">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>About us</div>
       <div className="flex w-[90vw] justify-evenly items-center">
-        <div className={cn("flex flex-col gap-4 text-3xl", hideImage ? "" : "ml-8")}>
+        <div className={cn("flex flex-col gap-4 text-3xl", hideImage ? "text-md" : "ml-8")}>
           <div><span className="text-[var(--maindark)] font-bold">Creative Computing Society</span> is back with <span className="text-[var(--maindark)] font-bold">HackTU {HACKATHON_VERSION}.0</span>, our flagship event
           hosted at Thapar Institute of Engineering and Technology, Patiala.
           We're excited to see what innovative ideas emerge from this year's event.</div>

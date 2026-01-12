@@ -29,7 +29,7 @@ export default function Navbar({ items }: {
           <NavigationMenuLink href={link} className={cn(
             navigationMenuTriggerStyle(),
             "bg-transparent",
-            verySmall ? "text-md" : "text-xl"
+            verySmall ? "text-sm" : "text-xl"
           )}>
             {name}
           </NavigationMenuLink>
