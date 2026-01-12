@@ -8,7 +8,7 @@ export const REGISTERATION_DEADLINE_INCLUSIVE_DAY = "2026-01-18";
 export const REGISTERATION_DEADLINE = "2026-01-18T18:30:00Z"; // 18 EOD
 export const REGISTERATION_DEADLINE_FMT = "January 18 2026"
 export const NAVBAR = [
-  n("Register", "htps://example.com"),
+  n("Register", "https://bit.ly/hacktu7"),
   n("Sponsors", "#sponsor"),
   n("FAQs", "#faq"),
   n("Contact", "#footer"),
@@ -58,9 +58,10 @@ export const SPONSORS = [
   s("/sponsors/ETHIndia.svg", "https://ethindia-villa.devfolio.co/overview", "ETHIndia"),
   s("/sponsors/github.png", "https://github.com", "Github"),
   s("/sponsors/genesis.webp", "https://instagram.com/zk_genesis/", "Genesis"),
+  s("/sponsors/spec.png", "https://spec.nith.ac.in/", "SPEC-NITH"),
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
-// forcing a commit
+
 export type Track = {
   name: string;
   description: string;
