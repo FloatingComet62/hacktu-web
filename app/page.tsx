@@ -24,11 +24,11 @@ export default function Home() {
       <Tracks />
       <div className="h-32"></div>
       <Timeline />
-      <ReachPatiala />
       <div className="h-32"></div>
       <Sponsor />
       <div className="h-32"></div>
       <FAQs />
+      <ReachPatiala />
       <div className="h-32"></div>
       <Footer />
     </div>

@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
-      <div className="w-screen flex flex-col gap-2 justify-center p-4">
+      <div className="w-screen flex flex-col gap-2 justify-center p-2">
 <Link href="/" className="self-center">
   <Button className="w-[90vw] text-lg">Go back</Button>
 </Link>
 <div className="text-md text-center">Numbers might slightly vary depending upon the time and date</div>
+<Card className="p-2">
 <div className="text-2xl">By Train</div>
 <div className="text-lg">
 The nearest railway station is Patiala Junction
@@ -95,6 +97,7 @@ Chandigarh to Patiala.
 Follow the instructions under "By Road" if you want to travel via road.
 </li>
 </ul>
+</Card>
       </div>
     </div>
   )
