@@ -20,8 +20,11 @@ export default function Navbar({ items }: {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+            const target = e.currentTarget as HTMLAnchorElement;
+            const href = target.getAttribute("href");
+            if (!href) return;
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            document.querySelector(href)?.scrollIntoView({
                 behavior: 'smooth'
             });
         });
