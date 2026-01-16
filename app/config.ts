@@ -62,6 +62,10 @@ export const SPONSORS = [
   s("/sponsors/spec.png", "https://spec.nith.ac.in/", "SPEC-NITH"),
   s("/sponsors/navan.png", "https://navan.ai/", "Navan"),
   s("/sponsors/keploy.svg", "https://keploy.io/", "Keploy"),
+  s("/sponsors/dilathon.png", "http://dilaton.ai/", "Dilathon"),
+  s("/sponsors/thinkcell.png", "https://www.think-cell.com/en/essentials", "Think-Cell"),
+  s("/sponsors/xyz.svg", "https://gen.xyz/", "XYZ"),
+  s("/sponsors/interviewbuddy.svg", "https://interviewbuddy.net/", "Interview Buddy"),
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
 
