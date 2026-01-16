@@ -60,6 +60,8 @@ export const SPONSORS = [
   s("/sponsors/github.png", "https://github.com", "Github"),
   s("/sponsors/genesis.webp", "https://instagram.com/zk_genesis/", "Genesis"),
   s("/sponsors/spec.png", "https://spec.nith.ac.in/", "SPEC-NITH"),
+  s("/sponsors/navan.png", "https://navan.ai/", "Navan"),
+  s("/sponsors/keploy.svg", "https://keploy.io/", "Keploy"),
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
 
