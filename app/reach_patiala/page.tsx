@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-col items-center bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
-      <div className="w-screen flex flex-col gap-2 justify-center p-2">
+      <div className="w-[99vw] flex flex-col gap-2 justify-center p-2">
 <Link href="/" className="self-center">
   <Button className="w-[90vw] text-lg font-[Nippo-Variable]">Go back</Button>
 </Link>

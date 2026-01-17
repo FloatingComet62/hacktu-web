@@ -4,6 +4,7 @@ import { TRACKS } from "@/app/config"
 import { Card, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { useWidthCutoff } from "@/hooks/use-mobile";
+import DilathonSponsoredTracks from "./DilathonSponsoredTracks";
 
 const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Tracks() {
@@ -24,6 +25,7 @@ export default function Tracks() {
           </Card>
         ))}
       </div>
+      <DilathonSponsoredTracks {...{ smallerFont, switchToSingleColumn, verySmall }} />
     </div>
   )
 }

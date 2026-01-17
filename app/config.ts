@@ -21,6 +21,37 @@ export const TRACKS = [
   t("Sustainable Ecosystems", "Design systems that help industries and cities grow without hurting nature. Build solutions to optimize resource usage, monitor wildlife health, or create eco-friendly infrastructure. The goal is to support modern living while actively protecting the land around us.", "SDG 9, 11 & 15"),
   t("Collaborative, Consumption & Production", "Create platforms that connect producers and consumers to reduce waste. We need tools to track product lifecycles, share materials between industries, or encourage responsible buying. Use technology to make 'reduce, reuse, recycle' a reality through better collaboration.", "SDG 9, 11 & 15"),
 ] as Track[];
+export const DILATHON_SPONSORED_TRACKS = [
+  dil_t("RSSI-Driven Autonomous Antenna Tracker", "Ground stations lose UAV comms when drones maneuver unpredictably", "Build an antenna tracker that autonomously follows a UAV using ONLY RSSI signals (no GPS/telemetry)", [
+    "RSSI threshold-based direction finding",
+    "PID control for smooth tracking",
+    "30° field-of-view compensation",
+    "Real-time signal strength visualization",
+  ]),
+  dil_t("Campus Guardian Drone", "Campuses need 24/7 surveillance but can't afford enterprise solutions", "Deploy a low cost autonomous patrol drone (less than ₹25k)", [
+    "Raspberry Pi camera + motion detection",
+    "Night vision capability",
+    "IoT alerts to web dashboard",
+    "Autonomous battery charging docking",
+    "Must-Have Features:",
+    "Geofencing & no-fly zones",
+    "Object classification (person/bike/litter)",
+    "Live streaming + event recording",
+  ]),
+  dil_t("Indoor GPS-Denied Maze Navigator", "GPS fails indoors. Drones need to navigate tight spaces autonomously", "Build a micromouse-inspired drone that solves 3x3m indoor mazes", [
+    "Visual odometry (camera-based)",
+    "IMU fusion + SLAM",
+    "Wall-following + dead reckoning",
+    "Obstacle avoidance (<30cm clearance)",
+    "Bonus: Map reconstruction + fastest solve time",
+  ]),
+  dil_t("GPS-Jammed Autonomous Navigation", "Enemy jamming/spoofing disables GPS. Mission must continue", "Enable UAV to complete waypoint mission using GPS-denied sensors only", [
+    "Visual odometry (optical flow)",
+    "IMU + Barometer fusion",
+    "Compass (magnetometer)",
+    "Optional: Pre-loaded map matching",
+  ]),
+] as DilathonTrack[];
 export const TIMELINE = [
   q("Track Release", "Get ready to innovate! We've revealed the hackathon tracks, each designed to spark creativity and tackle real-world challenges. Gear up to choose your path and make a difference!", "2026-01-01"),
   q("Idea Submission", "Submit you innovative ideas, as we have limited seats! We're reviewing submissions as they come in, and you'll be notified about your selection status through mail. Don't miss your chance to join HackTU!", "2026-01-02", REGISTERATION_DEADLINE_INCLUSIVE_DAY),
@@ -69,6 +100,12 @@ export const SPONSORS = [
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
 
+export type DilathonTrack = {
+  name: string;
+  problem: string;
+  challenge: string;
+  requirements: string[];
+};
 export type Track = {
   name: string;
   description: string;
@@ -89,6 +126,9 @@ function f(question: string, answer: string) {
 }
 function t(name: string, description: string, sdg: string) {
   return { name, description, sdg };
+}
+function dil_t(name: string, problem: string, challenge: string, requirements: string[]) {
+  return { name, problem, challenge, requirements };
 }
 function q(title: string, description: string, start_date: string, end_date?: string) {
   return { title, description, start_date: new Date(start_date), end_date: new Date(end_date || start_date) };
