@@ -1,6 +1,6 @@
 "use client";
 
-import { TRACKS } from "@/app/config"
+import { DILATHON_SPONSORED_TRACKS, TRACKS } from "@/app/config"
 import { Card, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { useWidthCutoff } from "@/hooks/use-mobile";
@@ -24,8 +24,39 @@ export default function Tracks() {
             <div className="text-md">{track.description}</div>
           </Card>
         ))}
+        {DILATHON_SPONSORED_TRACKS.map((track, i) => (
+          <Card key={`dilathon-track-${i}`} className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>
+            <CardTitle>
+              <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-xl" : "text-4xl")}>{track.name}</div>
+            </CardTitle>
+            <div className="flex flex-col gap-2 text-start">
+              <div className="font-bold text-lg">Problem</div>
+              <div className="text-lg text-[#fb542b]">{track.problem}</div>
+              <div className="font-bold text-lg">Challenge</div>
+              <div className="text-lg text-[#68b8ff]">{track.challenge}</div>
+              <div className="font-bold text-lg">Requirements</div>
+              <div className="flex flex-col ml-4">
+              {track.requirements.map((requirement, j) => (
+                <div key={`dilathon-track-${i}-requirement-${j}`}>{requirement}</div>
+              ))}
+              </div>
+            </div>
+          </Card>
+        ))}
+        <Card className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[(DILATHON_SPONSORED_TRACKS.length) % SHADOWCOLOR.length] + "shadow")}>
+          <CardTitle>
+            <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-xl" : "text-4xl")}>OPEN DEFENCE INNOVATION</div>
+          </CardTitle>
+          <div className="text-md">
+Surprise us! Propose + prototype any defense-relevant drone solution:
+Counter-UAV jamming
+Swarm coordination
+Thermal target tracking
+Autonomous package delivery (ISR)
+Your wildest idea...
+          </div>
+        </Card>
       </div>
-      <DilathonSponsoredTracks {...{ smallerFont, switchToSingleColumn, verySmall }} />
     </div>
   )
 }
