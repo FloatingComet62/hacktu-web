@@ -4,6 +4,7 @@ import { DILATHON_SPONSORED_TRACKS, TRACKS } from "@/app/config"
 import { Card, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { useWidthCutoff } from "@/hooks/use-mobile";
+import Link from "next/link";
 
 const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Tracks() {
@@ -24,12 +25,26 @@ export default function Tracks() {
               <div className="text-lg text-[#fb542b]">{track.problem}</div>
               <div className="font-bold text-lg">Challenge</div>
               <div className="text-lg text-[#68b8ff]">{track.challenge}</div>
-              <div className="font-bold text-lg">Requirements</div>
-              <div className="flex flex-col ml-4">
-              {track.requirements.map((requirement, j) => (
-                <div key={`dilathon-track-${i}-requirement-${j}`}>{requirement}</div>
-              ))}
-              </div>
+              {track.attachments.length > 0 && (
+                <>
+                  <div className="font-bold text-lg">Attachments</div>
+                  <div className="flex flex-col ml-4">
+                    {track.attachments.map(({ link, label }, j) => (
+                      <Link key={`dilathon-track-${i}-requirement-${j}`} href={link}>{label}</Link>
+                    ))}
+                  </div>
+                </>
+              )}
+              {track.requirements.length > 0 && (
+                <>
+                  <div className="font-bold text-lg">Requirements</div>
+                  <div className="flex flex-col ml-4">
+                    {track.requirements.map((requirement, j) => (
+                      <div key={`dilathon-track-${i}-requirement-${j}`}>{requirement}</div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </Card>
         ))}

@@ -22,12 +22,20 @@ export const TRACKS = [
   t("Collaborative, Consumption & Production", "Create platforms that connect producers and consumers to reduce waste. We need tools to track product lifecycles, share materials between industries, or encourage responsible buying. Use technology to make 'reduce, reuse, recycle' a reality through better collaboration.", "SDG 12 & 17"),
 ] as Track[];
 export const DILATHON_SPONSORED_TRACKS = [
+  dil_t(
+    "Determine Safe landing Zones for Drones", "In real autonomous drone systems, landing safely is critical, the drone must identify a valid landing zone (LZ) from camera imagery and assess how confident it is that the zone is safe before committing to land.",
+    "Your task is to design a model or algorithm that: Takes an image or image patch of a candidate landing zone and outputs a confidence score indicating how safe it is to land. Training data includes landing zone annotations that may be used to crop image patches with an image may be containing one or more annotated candidate landing zones",
+    [],
+    [
+      { link: "https://drive.google.com/file/d/1QHPnTuw0s01JYzI3feSSkFOZC7Fgkn8o/view", label: "Dataset" }
+    ]
+  ),
   dil_t("RSSI-Driven Autonomous Antenna Tracker", "Ground stations lose UAV comms when drones maneuver unpredictably", "Build an antenna tracker that autonomously follows a UAV using ONLY RSSI signals (no GPS/telemetry)", [
     "RSSI threshold-based direction finding",
     "PID control for smooth tracking",
     "30° field-of-view compensation",
     "Real-time signal strength visualization",
-  ]),
+  ], []),
   dil_t("Campus Guardian Drone", "Campuses need 24/7 surveillance but can't afford enterprise solutions", "Deploy a low cost autonomous patrol drone (less than ₹25k)", [
     "Raspberry Pi camera + motion detection",
     "Night vision capability",
@@ -37,20 +45,20 @@ export const DILATHON_SPONSORED_TRACKS = [
     "Geofencing & no-fly zones",
     "Object classification (person/bike/litter)",
     "Live streaming + event recording",
-  ]),
+  ], []),
   dil_t("Indoor GPS-Denied Maze Navigator", "GPS fails indoors. Drones need to navigate tight spaces autonomously", "Build a micromouse-inspired drone that solves 3x3m indoor mazes", [
     "Visual odometry (camera-based)",
     "IMU fusion + SLAM",
     "Wall-following + dead reckoning",
     "Obstacle avoidance (<30cm clearance)",
     "Bonus: Map reconstruction + fastest solve time",
-  ]),
+  ], []),
   dil_t("GPS-Jammed Autonomous Navigation", "Enemy jamming/spoofing disables GPS. Mission must continue", "Enable UAV to complete waypoint mission using GPS-denied sensors only", [
     "Visual odometry (optical flow)",
     "IMU + Barometer fusion",
     "Compass (magnetometer)",
     "Optional: Pre-loaded map matching",
-  ]),
+  ], []),
 ] as DilathonTrack[];
 export const TIMELINE = [
   q("Track Release", "Get ready to innovate! We've revealed the hackathon tracks, each designed to spark creativity and tackle real-world challenges. Gear up to choose your path and make a difference!", "2026-01-01"),
@@ -122,6 +130,7 @@ export type DilathonTrack = {
   name: string;
   problem: string;
   challenge: string;
+  attachments: { link: string; label: string }[];
   requirements: string[];
 };
 export type Track = {
@@ -145,8 +154,8 @@ function f(question: string, answer: string) {
 function t(name: string, description: string, sdg: string) {
   return { name, description, sdg };
 }
-function dil_t(name: string, problem: string, challenge: string, requirements: string[]) {
-  return { name, problem, challenge, requirements };
+function dil_t(name: string, problem: string, challenge: string, requirements: string[], attachments: { link: string; label: string }[]) {
+  return { name, problem, challenge, requirements, attachments };
 }
 function q(title: string, description: string, start_date: string, end_date?: string) {
   return { title, description, start_date: new Date(start_date), end_date: new Date(end_date || start_date) };
