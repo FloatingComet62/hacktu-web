@@ -4,9 +4,9 @@ export const HACKATHON_DATE_FMT = "February 7th & 8th";
 export const HACKATHON_DATE_NO_TIME = "2026-02-07";
 export const HACKATHON_DATE = "2026-02-07T5:30:00Z";
 export const HACKATHON_END_DATE = "2026-02-08";
-export const REGISTERATION_DEADLINE_INCLUSIVE_DAY = "2026-01-21";
-export const REGISTERATION_DEADLINE = "2026-01-21T18:30:00Z"; // 18 EOD
-export const REGISTERATION_DEADLINE_FMT = "January 21 2026"
+export const REGISTERATION_DEADLINE_INCLUSIVE_DAY = "2026-01-22";
+export const REGISTERATION_DEADLINE = "2026-01-22T18:30:00Z"; // 18 EOD
+export const REGISTERATION_DEADLINE_FMT = "January 22 2026"
 export const NAVBAR = [
   n("Register", "https://bit.ly/hacktu7"),
   n("Sponsors", "#sponsor"),
