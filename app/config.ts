@@ -107,7 +107,7 @@ export const SPONSORS = {
   ],
   "Associate Sponsor": [
     s("/sponsors/genesis.webp", "https://instagram.com/zk_genesis/", "Genesis"),
-    s("/sponsors/atovio.png", "https://atovio.in/", "Atovio"),
+    s("/sponsors/atovio.jpeg", "https://atovio.in/", "Atovio"),
   ],
   [NORMAL_SPONSOR]: [
     s("/sponsors/ETHIndia.svg", "https://ethindia-villa.devfolio.co/overview", "ETHIndia"),
