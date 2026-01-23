@@ -25,6 +25,7 @@ export default function Tracks() {
               <div className="text-lg text-[#fb542b]">{track.problem}</div>
               <div className="font-bold text-lg">Challenge</div>
               <div className="text-lg text-[#68b8ff]">{track.challenge}</div>
+              <div className="text-lg text-[#76b963]">Get an opportunity to secure Pre Placement Interview (PPI) with Dilathon</div>
               {track.attachments.length > 0 && (
                 <>
                   <div className="font-bold text-lg">Attachments</div>
